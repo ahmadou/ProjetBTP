@@ -11,10 +11,9 @@
 	<description>contient les services web</description>
 	<dependencies>
 		<dependency>
-			<groupId>com.impetus.client</groupId>
-			<artifactId>kundera-cassandra</artifactId>
-			<version>2.9</version>
+			<groupId>fr.dou.btp</groupId>
+			<artifactId>beans</artifactId>
+			<version>${project.version}</version>
 		</dependency>
-
 	</dependencies>
 </project>
