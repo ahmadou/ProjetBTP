@@ -12,7 +12,7 @@
 		<spring.version>4.0.0.RELEASE</spring.version>
 		<spring.security.version>3.2.0.RELEASE</spring.security.version>
 		<jersey.version>2.4.1</jersey.version>
-		<org.hibernate.version>4.2.2.Final</org.hibernate.version>
+		<org.hibernate.version>4.3.0.Final</org.hibernate.version>
 		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
 		<junit.version>4.11</junit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -99,8 +99,29 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.12</version>
 		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${org.hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${org.hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -111,6 +132,11 @@
 					<source>1.7</source>
 					<target>1.7</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+				<version>1.1.2</version>
 			</plugin>
 		</plugins>
 	</build>

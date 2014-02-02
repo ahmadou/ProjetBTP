@@ -5,12 +5,12 @@
 var LoginController = function ($scope, $rootScope, $location, $http, $cookieStore) {
 	
 	$scope.login = function() {
-		$http.post('rest/login/authenticate','{"identifiant":"'+$scope.identifiant+'", "password":"'+$scope.password+'"}"')
+		$http.post('rest/secure/login/authenticate',JSON.stringify(form2js('loginForm')))
 		.success(function(user, status, headers, config) {
 			$rootScope.user = user;
 			$http.defaults.headers.common['X-Auth-Token'] = user.token;
 			$cookieStore.put('user', user);
-			$location.path("/");
+			$location.path("/dashboard");
 		  })
 		 .error(function(data, status, headers, config) {
 			   $scope.error='Erreur lors de l\'identification';

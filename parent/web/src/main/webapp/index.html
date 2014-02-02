@@ -3,8 +3,9 @@
 <head>
 <title>BTP Project</title>
 </head>
-<body style="padding-top: 60px" >
-	<form id="loginForm"  ng-controller="LoginController" ng-submit="login()">
+<body style="padding-top: 60px"  >
+<div ng-controller="LoginController">
+	<form id="loginForm"   ng-submit="login()">
 		<input type="text" ng-model="identifiant" name="identifiant">
 		<input ng-model="password" name="password">
 		<input type="submit" value="login" />
@@ -18,15 +19,18 @@
 	<!-- 	<script src="js/jquery-2.0.2.js"></script> -->
 	<!-- 	<script src="lib/angular/bootstrap-3.0.2.min.js"></script> -->
 
-	<script src="lib/angular/angular.js"></script>
-	<script src="lib/angular/angular-resource.js"></script>
-	<script src="lib/angular/angular-route.js"></script>
-	<script src="lib/angular/angular-cookies.js"></script>
+	<script src="js/lib/jquery-2.0.2.js""></script>
+	<script src="js/lib/angular/angular.js"></script>
+	<script src="js/lib/angular/angular-resource.js"></script>
+	<script src="js/lib/angular/angular-route.js"></script>
+	<script src="js/lib/angular/angular-cookies.js"></script>
+	<script src="js/lib/form2js.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/services.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/filters.js"></script>
 	<script src="js/directives.js"></script>
-	<script src="js/lib/jquery-2.0.2.js""></script>
+	
+</div>
 </body>
 </html>

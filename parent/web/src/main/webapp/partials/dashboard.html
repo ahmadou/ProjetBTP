@@ -1,6 +1,16 @@
 
+<div ng-controller="MockController" id="dashboard">
 <div class="page-header">
 	<h3>News</h3>
 </div>
 
 Connexion reussie {{user.logged}}
+
+<table>
+	<tr ng-repeat="project in projectList">
+		<td>{{project.id}}</td>
+		<td>{{projet.libelle}}</td>
+	</tr>
+</table>
+
+</div>

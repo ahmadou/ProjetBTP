@@ -14,8 +14,8 @@ config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'partials/login.html',
 		controller: 'LoginController'
 	})
-	.when('dashboard', {
+	.when('/dashboard', {
 		templateUrl: 'partials/dashboard.html',
-		controller: 'DashBoardController'
+		controller: 'MockController'
 	});
 }]);
