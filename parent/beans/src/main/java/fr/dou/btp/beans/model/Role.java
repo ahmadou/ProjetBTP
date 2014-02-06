@@ -9,14 +9,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.security.core.GrantedAuthority;
+
 /**
  * @author Diouf
  *
  */
 @Entity
 @Table(name="adm_roles")
-public class Role {
+public class Role implements GrantedAuthority {
 	
+	/**
+	 * Serial version UID
+	 */
+	private static final long serialVersionUID = 2402127734610702277L;
+
 	/**
 	 * Identifiant technique.
 	 */
@@ -57,6 +64,14 @@ public class Role {
 	 */
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.security.core.GrantedAuthority#getAuthority()
+	 */
+	@Override
+	public String getAuthority() {
+		return libelle;
 	}
 	
 	

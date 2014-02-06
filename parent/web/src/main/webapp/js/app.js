@@ -10,7 +10,12 @@ angular.module('btpApp', [
   'myApp.directives',
 ]).
 config(['$routeProvider', function($routeProvider) {
-	$routeProvider.when('/login', {
+	$routeProvider
+	.when('/', {
+		templateUrl: 'partials/accueil.html',
+		controller: 'AccueilController'
+	})
+	.when('/login', {
 		templateUrl: 'partials/login.html',
 		controller: 'LoginController'
 	})

@@ -25,7 +25,7 @@ public class Projet {
 	/**
 	 * L utilisateur proprietaire du projet.
 	 */
-	private Utilisateur propietaire;
+	private User propietaire;
 
 	/**
 	 * @return la valeur de libelle
@@ -58,14 +58,14 @@ public class Projet {
 	/**
 	 * @return la valeur de propietaire
 	 */
-	public Utilisateur getPropietaire() {
+	public User getPropietaire() {
 		return propietaire;
 	}
 
 	/**
 	 * @param propietaire la valeur a affecter a propietaire
 	 */
-	public void setPropietaire(Utilisateur propietaire) {
+	public void setPropietaire(User propietaire) {
 		this.propietaire = propietaire;
 	}
 

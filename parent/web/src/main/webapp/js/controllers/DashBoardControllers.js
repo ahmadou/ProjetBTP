@@ -10,7 +10,10 @@ var MockController = function ($scope,$http) {
 			$scope.projectList = data;
 		  })
 		  .error(function(data, status, headers, config) {
-			$scope.error = 'Aucune donnee trouvee';
+			if(status=401){
+				$scope.error='Votre session a expire';
+				$location.path("/");
+			}
 		  });
 };
 //Injection des dependances

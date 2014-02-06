@@ -33,13 +33,11 @@ public class ProjectService {
 	@RequestMapping(value="getProjectList", method=RequestMethod.GET)
 	@ResponseBody
 	public List<ProjectDTO> getProjectList(HttpSession session) {
-
-		System.out.println(session.getAttribute("test"));
 		return createDummyList();
 	}
 
 	/**
-	 * A fin de test
+	 * A fin de test.
 	 * @return
 	 */
 	private List<ProjectDTO> createDummyList() {

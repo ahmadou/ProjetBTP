@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author Diouf
  *
  */
-public class UtilisateurDTO implements Serializable {
+public class UserDTO implements Serializable {
 
 	/**
 	 * 

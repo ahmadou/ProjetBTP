@@ -1,13 +1,11 @@
 package fr.dou.btp.beans.model;
 
-import javax.persistence.Entity;
 
 /**
  * Les semelles sont les supports aux poteaux dans les fondations.
  * @author Diouf
  *
  */
-@Entity
 public class Semelle {
 	
 	/**

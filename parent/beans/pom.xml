@@ -9,11 +9,4 @@
 	<artifactId>beans</artifactId>
 	<name>Beans</name>
 	<description>Contient les POJO du projet</description>
-	<dependencies>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>4.3.0.Final</version>
-		</dependency>
-	</dependencies>
 </project>

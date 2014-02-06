@@ -21,7 +21,6 @@
 	<modules>
 		<module>beans</module>
 		<module>services</module>
-		<module>core</module>
 		<module>web</module>
 	</modules>
 	<pluginRepositories>

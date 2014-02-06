@@ -28,4 +28,9 @@ CREATE TABLE `btp2014`.`adm_users_roles` (
     FOREIGN KEY (`role_id`)
     REFERENCES `btp2014`.`adm_roles` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON UPDATE NO ACTION);	
+	
+ALTER TABLE `btp2014`.`adm_users` 
+ADD UNIQUE INDEX `identifiant_UNIQUE` (`identifiant` ASC);
+ALTER TABLE `btp2014`.`adm_users` 
+CHANGE COLUMN `password` `password` VARCHAR(250) NOT NULL ;
