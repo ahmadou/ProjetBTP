@@ -3,21 +3,15 @@
  */
 
 //Definition mock controller
-var MockController = function ($scope,$http) {
+var MockController = function ($scope,$http, $location) {
 	
 		$http.get('rest/secure/project/getProjectList')
 		.success(function(data, status, headers, config) {
 			$scope.projectList = data;
-		  })
-		  .error(function(data, status, headers, config) {
-			if(status=401){
-				$scope.error='Votre session a expire';
-				$location.path("/");
-			}
 		  });
 };
 //Injection des dependances
-MockController['$inject']=['$scope','$http'];
+MockController['$inject']=['$scope','$http','$location'];
 // Binding
 btpApp.controller('MockController',MockController);
 /* Controller Login */

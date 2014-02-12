@@ -11,6 +11,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,8 +30,13 @@ import fr.dou.btp.services.dao.UserDAO;
  */
 @Controller
 @RequestMapping("login")
-public class LoginService {
+public class LoginService extends BaseService {
 	
+	/**
+	 * Cle de session pour le contexte spring security
+	 */
+	private static final String SPRING_SECURITY_CONTEXT = "SPRING_SECURITY_CONTEXT";
+
 	/**
 	 * User DAO
 	 */
@@ -44,7 +51,8 @@ public class LoginService {
 	private AuthenticationManager authManager;
 	
 	/**
-	 * Service rest pour l'authentification
+	 * Service rest pour l'authentification.
+	 * Retourne une representation JSON du user
 	 * @return
 	 */
 	@RequestMapping(value="authenticate", method=RequestMethod.POST)
@@ -55,10 +63,17 @@ public class LoginService {
 			UsernamePasswordAuthenticationToken authenticationToken =
 					new UsernamePasswordAuthenticationToken(user.getIdentifiant(), user.getPassword());
 			Authentication authentication = this.authManager.authenticate(authenticationToken);
-			SecurityContextHolder.getContext().setAuthentication(authentication);
+			SecurityContext context = SecurityContextHolder.getContext();
+			context.setAuthentication(authentication);
+			session.setAttribute(SPRING_SECURITY_CONTEXT, context);
+			for(GrantedAuthority authority: authentication.getAuthorities()) {
+				user.getRoles().put(authority.getAuthority(), true);
+			}
 			user.setLogged(true);
+			user.setPassword("");
 		} catch (AuthenticationException e) {
 			 user.setLogged(false);
+			 user.setPassword("");
 		}
 		return user;
 	}

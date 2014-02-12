@@ -74,7 +74,6 @@ public class SaltedSHA256PasswordEncoder implements PasswordEncoder {
 	public boolean matches(CharSequence rawPassword, String encodedPassword) {
 
 		String encode = this.encode(rawPassword);
-		System.out.println(encode);
 		return encode.equals(encodedPassword);
 	}
 

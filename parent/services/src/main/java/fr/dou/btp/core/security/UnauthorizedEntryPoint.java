@@ -27,6 +27,7 @@ public class UnauthorizedEntryPoint implements AuthenticationEntryPoint {
 	@Override
 	public void commence(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException arg2) throws IOException, ServletException {
+		arg2.printStackTrace();
 		response.sendError(HttpServletResponse.SC_UNAUTHORIZED,"Interdit : session invalide");
 	}
 

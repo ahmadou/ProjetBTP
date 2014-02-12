@@ -65,6 +65,9 @@
 						<exclude>
 							js/lib/**/*.js
 						</exclude>
+						<exclude>
+							css/**/*.css
+						</exclude>
 					</excludes>
 				</configuration>
 			</plugin>

@@ -4,6 +4,8 @@
 package fr.dou.btp.beans.dto;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Diouf
@@ -32,7 +34,26 @@ public class UserDTO implements Serializable {
 	 */
 	private String token;
 	
+	/**
+	 * Map des roles dont dispose le user
+	 */
+	private Map<String, Boolean> roles = new HashMap<String,Boolean>();
 	
+	
+	/**
+	 * @return la valeur de roles
+	 */
+	public Map<String, Boolean> getRoles() {
+		return roles ;
+	}
+
+	/**
+	 * @param roles la valeur a affecter a roles
+	 */
+	public void setRoles(Map<String, Boolean> roles) {
+		this.roles = roles;
+	}
+
 	/**
 	 * @return la valeur de token
 	 */

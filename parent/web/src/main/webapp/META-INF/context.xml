@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/btp2014DS" auth="Container" type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/btp2014"
+		username="btp2014" password="btp2014" removeAbandoned="true"
+		removeAbandonedTimeout="90" logAbandoned="true" maxActive="20"
+		maxIdle="10" maxWait="-1" />
+</Context>

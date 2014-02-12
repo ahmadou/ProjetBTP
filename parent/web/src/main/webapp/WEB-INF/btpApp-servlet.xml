@@ -28,12 +28,11 @@
 		</security:authentication-provider>
 	</security:authentication-manager>
 
-	<security:http realm="Protected API" use-expressions="true"
+	<security:http realm="Protected API"  use-expressions="true"
 		auto-config="false" entry-point-ref="unauthorizedEntryPoint"
 		authentication-manager-ref="authenticationManager">
 		<security:intercept-url pattern="/rest/login/authenticate" access="permitAll" />
-		<security:intercept-url pattern="/rest/secure/**"
-			access="hasRole('user')" />
+		<security:intercept-url pattern="/rest/secure/**" access="hasRole('user')" />
 	</security:http>
 
 	
